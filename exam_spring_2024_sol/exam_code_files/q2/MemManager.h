@@ -16,7 +16,7 @@ private:
     T* data;
     int numBlock;
     int blockSize;
-    T* follow;
+    int* follow;
 
 public:
     MemManager(int numBlock, int blockSize){
@@ -26,7 +26,7 @@ public:
         data = new T[numBlock * blockSize];
         
         try{
-            follow = new T[numBlock];
+            follow = new int[numBlock];
         }
         catch(bad_alloc& e){
             delete[] data;
