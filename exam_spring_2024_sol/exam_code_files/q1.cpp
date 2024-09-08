@@ -39,7 +39,6 @@ private:
     vector<unique_ptr<Action>> actions;
 public:
     MacroAction(vector<unique_ptr<Action>>& actions_arg){
-        //this->actions = std::move(actions_arg);
         for (auto& action : actions_arg) {
             this->actions.push_back(std::move(action));
         }
@@ -79,15 +78,5 @@ int main(){
     manager.bind(key2, make_unique<PrintAction>("oopsy..."));
     manager.press(key1);
     manager.press(key2);
-
-
-    string key3 = "C";
-    vector<unique_ptr<Action>> actions;
-    actions.push_back(make_unique<BeepAction>());
-    actions.push_back(make_unique<PrintAction>("Hello World!"));
-    actions.push_back(make_unique<BeepAction>());
-    manager.bind(key3, make_unique<MacroAction>(actions));
-    manager.press(key3);
-
     return 0;
 }
