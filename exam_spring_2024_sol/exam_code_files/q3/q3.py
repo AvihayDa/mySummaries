@@ -15,9 +15,7 @@ class Student:
         examf = self.exam_grade * exam_weight
         hwf = sum([x*y for x,y in zip(self.hw_grades, hw_weight)])
         return examf + hwf
-    
 
-x = Student("Daniel", 90, [100, 80, 90])
 
 def load_student_from_path(path : str):
     with open(path, 'r') as f:
