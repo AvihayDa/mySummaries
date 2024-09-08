@@ -24,7 +24,15 @@ public:
         this->numBlock = numBlock;
         this->blockSize = blockSize;
         data = new T[numBlock * blockSize];
-        follow = new T[numBlock];
+        
+        try{
+            follow = new T[numBlock];
+        }
+        catch(bad_alloc& e){
+            delete[] data;
+            throw;
+        }
+
         for(int i = 0; i < numBlock; i++){
             follow[i] = 0;
         }
