@@ -1,0 +1,9 @@
+{
+    "name": "John",
+    "exam_grade": 99,
+    "hw_grades": [
+        100,
+        100,
+        90
+    ]
+}
