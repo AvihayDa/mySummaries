@@ -39,7 +39,6 @@ private:
     vector<unique_ptr<Action>> actions;
 public:
     MacroAction(vector<unique_ptr<Action>>& actions_arg){
-        //this->actions = std::move(actions_arg);
         for (auto& action : actions_arg) {
             this->actions.push_back(std::move(action));
         }
